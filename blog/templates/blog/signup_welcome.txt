@@ -1,0 +1,12 @@
+안녕하세요. {{ name }} 님.
+
+저희 {{ group_name }} 에 오신 것을 환영합니다.
+
+저희 멤버는 현재 {{ members_count }} 명이 등록되어있습니다.
+
+{% for member in members %}
+- {{ member }}{% endfor %}
+
+저희 사이트는 {{ site_url }} 입니다.
+
+감사합니다.

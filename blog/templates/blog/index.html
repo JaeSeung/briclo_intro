@@ -1,0 +1,29 @@
+{% extends layout|default:"blog/base.html" %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Ask Django</h1>
+            <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+            <p>
+                <a href="/download/" class="btn btn-primary">CSV 다운로드</a>
+                <a href="{% url "blog:post_list" %}" class="btn btn-default">글 목록</a>
+                <a href="/posts/" class="btn btn-default">글 목록</a>
+            </p>
+
+            <ul>
+            {% for post in post_list %}
+                <li>
+                    <a href="{{ post.get_absolute_url }}">
+                        {{ post.title }}
+                    </a>
+                    <a href="{% url "blog:post_detail" post.pk  %}">
+                        {{ post.title }}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

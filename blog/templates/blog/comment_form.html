@@ -1,0 +1,27 @@
+{% extends "blog/base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <!--
+    /blog/posts/new/
+    <a href=""></a>
+    <img src="" />
+    <form action=""></form>
+    -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {% comment %}
+                    <table class="table table-bordered table-hover">
+                    {{ form.as_table }}
+                    </table>
+                    {% endcomment %}
+                    {% bootstrap_form form %}
+                    <input type="submit" class="btn btn-primary" />
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
